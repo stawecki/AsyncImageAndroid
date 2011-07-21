@@ -89,6 +89,7 @@ public class AsyncImageRegistry {
 	 * @param cacheDirName - specify a custom directory name for file cache.
 	 */
 	public void registerCache(Integer cacheId, boolean fileCacheEnabled, String cacheDirName) {
+		if ( ! this.cacheRegistry.containsKey(cacheId) ) // If not registered:
 		this.cacheRegistry.put(cacheId, new AsyncImageCache(this.context, fileCacheEnabled, cacheDirName));
 	}
 
